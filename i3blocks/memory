@@ -66,8 +66,10 @@ if [[ "${DISPLAY}" != "perc" ]]; then
   fi
 fi
 
-echo "${MEMINFO}"
-echo "${MEMINFO}"
+#echo "${MEMINFO}"
+echo "<span color='#FFFFFF'> RAM ${MEMINFO}</span>"
+echo "<span color='#FFFFFF'> RAM ${MEMINFO}</span>"
+#echo "${MEMINFO}"
 echo ""
 
 if [[ "${SOURCE_PERC}" -gt "${URGENT_VALUE}" ]]; then

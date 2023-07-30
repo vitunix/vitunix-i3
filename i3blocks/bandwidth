@@ -67,8 +67,8 @@ if [[ "${PREV_IN}" != "" ]] && [[ "${PREV_OUT}" != "" ]]; then
   USAGE_OUT=$(FormatNumber "${DIFF_OUT}")
 
   if [[ "${DISPLAY}" = "both" ]]; then
-    echo "${USAGE_IN} : ${USAGE_OUT}"
-    echo "${USAGE_IN} : ${USAGE_OUT}"
+    echo "<span color='#FFFFFF'>  ${USAGE_IN} : ${USAGE_OUT} </span>"
+    echo "<span color='#FFFFFF'>  ${USAGE_IN} : ${USAGE_OUT} </span>"
     echo ""
     DIFF_TOTAL=$((DIFF_TOTAL+DIFF_IN))
     DIFF_TOTAL=$((DIFF_TOTAL+DIFF_OUT))
@@ -90,8 +90,10 @@ else
 fi
 
 # Remember the total and idle CPU times for the next check.
-echo "${BYTES_IN}" > "${PREV_FILE}"
-echo "${BYTES_OUT}" >> "${PREV_FILE}"
+
+# echo "<span color='#FFFFFF'> CPU ${DIFF_USAGE}%</span>"
+#echo "<span color='#FFFFFF'>  ${BYTES_IN}</span>" > "<span color='#FFFFFF'>${PREV_FILE}</span>"
+#echo "<span color='#FFFFFF'>  ${BYTES_OUT}" >> "<span color='#FFFFFF'>${PREV_FILE}</span>"
 
 if [[ "${DIFF_TOTAL}" -ge "${URGENT_VALUE}" ]]; then
   exit 33
